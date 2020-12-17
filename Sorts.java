@@ -1,11 +1,6 @@
-public class Sorts{
-  /**Bubble sort of an int array.
-  *@postcondition The array will be modified such that the elements will be in increasing order.
-  *@param data  the elements to be sorted.
-  */
+public class Sorts {
   public static void bubbleSort(int[] data) {
     int swaps = 0;
-    int largest = 0;
     int middleman = 0;
     for (int i = 0; i < data.length; i++) {
       swaps = 0;
