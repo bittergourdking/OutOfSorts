@@ -13,7 +13,7 @@ public class Sorts {
         }
       }
       if (swaps == 0) {
-        break;
+        i = data.length;
       }
     }
   }
