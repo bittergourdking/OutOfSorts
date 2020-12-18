@@ -39,7 +39,25 @@ public class Sorts {
 
   public static void insertionSort(int[] data) {
     int swapIndex = 0;
-    for (int i = 0; i < data.length; i++) {
+    int middleman = 0;
+    for (int i = 1; i < data.length; i++) {
+      for (int j = i; j > -1; j--) {
+        if (data[0] > data[i]) {
+          swapIndex = 0;
+        } else if (data[j] < data[i]) {
+          swapIndex = j + 1;
+        }
+      }
+
+      if (swapIndex == i) {
+        //empty
+      } else {
+        middleman = data[i];
+        for (int k = i; k > swapIndex; k--) {
+          data[k] = data[k - 1];
+        }
+        data[swapIndex] = middleman;
+      }
 
     }
   }
