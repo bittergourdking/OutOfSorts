@@ -46,6 +46,7 @@ public class Sorts {
           swapIndex = 0;
         } else if (data[j] < data[i]) {
           swapIndex = j + 1;
+          j = -1;
         }
       }
 
