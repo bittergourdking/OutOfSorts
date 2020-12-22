@@ -38,47 +38,23 @@ public class Sorts {
   }
 
   public static void insertionSort(int[] data) {
+    int middleman = 0;
+    int index = 0;
     for (int i = 1; i < data.length; i++) {
       if (data[i] < data[i - 1]) {
-        int currentVal = data[i];
+        middleman = data[i];
         for (int j = 0; j < data.length; j++) {
-          if (currentVal < data[j]) {
-            int counter = i;
-            while (counter > j) {
-              data[counter] = data[counter - 1];
-              counter--;
+          if (middleman < data[j]) {
+            index = i;
+            while (index > j) {
+              data[index] = data[index - 1];
+              index--;
             }
-            data[j] = currentVal;
+            data[j] = middleman;
             j = data.length;
           }
         }
       }
     }
   }
-
-/*
-  public static void insertionSort(int[] data) {
-    int swapIndex = 0;
-    int middleman = 0;
-    for (int i = 0; i < data.length; i++) {
-      for (int j = i; j > -1; j--) {
-        if (data[0] > data[i]) {
-          swapIndex = 0;
-        } else if (data[j] < data[i]) {
-          swapIndex = j + 1;
-          j = -1;
-        }
-      }
-      if (swapIndex == i) {
-      } else {
-        middleman = data[i];
-        for (int k = i; k > swapIndex; k--) {
-          data[k] = data[k - 1];
-        }
-        data[swapIndex] = middleman;
-      }
-    }
-  }
-*/
-
 }
